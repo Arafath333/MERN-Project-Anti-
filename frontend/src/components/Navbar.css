@@ -1,0 +1,302 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar__inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.85rem 0;
+}
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.navbar__logo-icon {
+    font-size: 1.5rem;
+}
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.navbar__link {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.navbar__link:hover {
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+}
+
+.navbar__search {
+    flex: 1;
+    max-width: 320px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+.navbar__search:focus-within {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.navbar__search-icon {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.navbar__search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    width: 100%;
+}
+
+.navbar__search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.navbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.navbar__icon-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.navbar__icon-btn:hover {
+    background: var(--bg-card);
+    border-color: var(--border-hover);
+    color: var(--text-primary);
+}
+
+.navbar__badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: var(--accent-primary);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+.navbar__user-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.navbar__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-primary);
+}
+
+.navbar__avatar-placeholder {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.navbar__dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 220px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    animation: fadeIn 0.2s ease;
+}
+
+.navbar__dropdown-header {
+    padding: 1rem;
+}
+
+.navbar__dropdown-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.navbar__dropdown-email {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.navbar__dropdown-divider {
+    height: 1px;
+    background: var(--border);
+}
+
+.navbar__dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar__dropdown-item:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+.navbar__dropdown-logout {
+    color: var(--error);
+}
+
+.navbar__dropdown-logout:hover {
+    color: var(--error);
+}
+
+/* Mobile */
+.show-mobile {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .show-mobile {
+        display: flex !important;
+    }
+}
+
+.navbar__mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+    animation: fadeIn 0.2s ease;
+}
+
+.navbar__mobile-search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.navbar__mobile-search input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar__mobile-search button {
+    background: var(--accent-primary);
+    border: none;
+    border-radius: var(--radius-full);
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.navbar__mobile-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar__mobile-link:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+.navbar__mobile-logout {
+    color: var(--error);
+}

@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+mobile/node_modules/
+
+# Environment & secrets
+backend/.env
+frontend/.env.local
+frontend/.env.production
+
+# Build outputs
+frontend/dist/
+mobile/.expo/
+mobile/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Uploads (local disk storage)
+backend/uploads/
+
+# Temp
+C:/Windows/Temp/ngrok*
