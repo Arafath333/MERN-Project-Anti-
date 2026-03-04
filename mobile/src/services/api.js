@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Change this to your machine's local IP when testing on a physical device
 // e.g., 'http://192.168.1.100:5000/api'
-const BASE_URL = 'http://localhost:5000/api'
+const BASE_URL = 'https://mern-project-anti.onrender.com/api'
 
 const api = axios.create({ baseURL: BASE_URL, timeout: 10000 })
 
