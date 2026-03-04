@@ -5,7 +5,6 @@ mobile/node_modules/
 # Environment & secrets
 backend/.env
 frontend/.env.local
-frontend/.env.production
 
 # Build outputs
 frontend/dist/
